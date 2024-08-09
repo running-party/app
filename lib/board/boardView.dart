@@ -1,6 +1,6 @@
 // boardView.dart
 import 'package:flutter/material.dart';
-import 'boardApi.dart';
+import 'board_api.dart';
 
 class BoardView extends StatelessWidget {
   final List<Board> boards;

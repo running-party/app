@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'boardApi.dart';
+import 'board_api.dart';
 import 'boardView.dart';
 
 class BoardPage extends StatefulWidget {
