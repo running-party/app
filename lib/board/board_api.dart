@@ -21,7 +21,7 @@ class Board {
   static Future<List<Board>> fetchBoards() async {
     try {
       final response = await http.get(Uri.parse
-        ("http://localhost:8081/api/boards"));
+        ("http://10.0.2.2:8081/api/boards"));
       // 포트 번호 확인
 
 
