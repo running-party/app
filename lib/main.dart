@@ -1,18 +1,22 @@
-// main.dart
 import 'package:flutter/material.dart';
-import 'domain/user/sign_in_page.dart';
+import 'package:provider/provider.dart';
+import 'domain/user/signUp/sign_up_model.dart';
+import 'domain/user/signUp/sign_up_page.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => SignUpModel(),
+      child: MyApp(),
+    ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Spring Boot API Example',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: SignInPage(),
+      home: SignUpPage(), // 여기에 SignUpPage를 사용
     );
   }
 }
