@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:runningpartyapp/domain/user/signUp/sign_up_api.dart';
-import '../dto/user_dto.dart';
+
+import '../../../dto/user_dto.dart';
 
 class SignUpModel with ChangeNotifier {
   final SignUpApi _api = SignUpApi(); // API와 통신
