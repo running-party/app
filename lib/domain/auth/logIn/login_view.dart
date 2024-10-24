@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../user/signUp/sign_up_page.dart';
 import 'login_model.dart';
 
 class LoginView extends StatelessWidget {
@@ -48,6 +49,16 @@ class LoginView extends StatelessWidget {
             // 비밀번호 찾기 페이지로 이동
           },
           child: Text('비밀번호 찾기'),
+        ),
+        TextButton(
+          onPressed: () {
+            // 회원가입 페이지로 이동
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SignUpPage()), // 회원가입 페이지로 이동
+            );
+          },
+          child: Text('회원가입'),
         ),
       ],
     );
