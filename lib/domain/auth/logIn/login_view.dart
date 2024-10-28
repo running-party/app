@@ -60,7 +60,85 @@ class LoginView extends StatelessWidget {
           },
           child: Text('회원가입'),
         ),
+        SizedBox(height: 20),
+
+        // 구글 로그인 버튼
+        ElevatedButton.icon(
+          onPressed: () {
+            _signInWithGoogle();
+          },
+          /*icon: Image.asset(
+            'assets/google_icon.png', // 구글 아이콘 이미지 경로
+            height: 24,
+          ),*/
+          label: Text('구글 로그인'),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.black,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+        ),
+        SizedBox(height: 10),
+
+        // 네이버 로그인 버튼
+        ElevatedButton.icon(
+          onPressed: () {
+            _signInWithNaver();
+          },
+          /*icon: Image.asset(
+            'assets/naver_icon.png', // 네이버 아이콘 이미지 경로
+            height: 24,
+          ),*/
+          label: Text('네이버 로그인'),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.green,
+            foregroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+        ),
+        SizedBox(height: 10),
+
+        // 카카오 로그인 버튼
+        ElevatedButton.icon(
+          onPressed: () {
+            _signInWithKakao();
+          },
+          /*icon: Image.asset(
+            'assets/kakao_icon.png', // 카카오 아이콘 이미지 경로
+            height: 24,
+          ),*/
+          label: Text('카카오 로그인'),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Color(0xFFFFE812),
+            foregroundColor: Colors.black,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+        ),
       ],
     );
+  }
+
+  // 구글 로그인 메서드
+  void _signInWithGoogle() {
+    // 실제 구글 로그인 연동 코드 추가
+    print("구글 로그인 시도");
+  }
+
+  // 네이버 로그인 메서드
+  void _signInWithNaver() {
+    // 실제 네이버 로그인 연동 코드 추가
+    print("네이버 로그인 시도");
+  }
+
+  // 카카오 로그인 메서드
+  void _signInWithKakao() {
+    // 실제 카카오 로그인 연동 코드 추가
+    print("카카오 로그인 시도");
   }
 }
