@@ -1,9 +1,9 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import '../dto/user_dto.dart';
+import '../../../dto/user_dto.dart';
 
 class SignUpApi {
-  final String _baseUrl = 'https://your-api-url.com';
+  final String _baseUrl = 'http://localhost:8081/v1/user';
 
   Future<bool> signUpUser(UserDto userDto) async {
     try {
