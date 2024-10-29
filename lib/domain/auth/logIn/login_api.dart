@@ -4,8 +4,7 @@ import '../../../dto/login_dto.dart';
 
 class LoginApi {
   static Future<Map<String, dynamic>> login(LoginDto loginDto) async {
-    final url = Uri.parse('http://localhost:8081/v1/user/login');
-
+    final url = Uri.parse('http://localhost:8081/v1/auth/login');
     final response = await http.post(
       url,
       headers: {

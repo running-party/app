@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../user/profile/profile_page.dart';
 import '../../user/signUp/sign_up_page.dart';
 import 'login_model.dart';
 
@@ -33,6 +34,10 @@ class LoginView extends StatelessWidget {
                 _loginIdController.text,
                 _passwordController.text,
               );
+/*              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfilePage(userId: '',)),
+              );*/
             },
             child: Text('로그인'),
           ),
