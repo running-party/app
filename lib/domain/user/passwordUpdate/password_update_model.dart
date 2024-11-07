@@ -10,7 +10,8 @@ class PasswordUpdateModel with ChangeNotifier {
   bool get isLoading => _isLoading;
   String get errorMessage => _errorMessage;
 
-  Future<void> updatePassword(String userId, String currentPassword, String newPassword) async {
+  Future<void> updatePassword(
+      String userId, String currentPassword, String newPassword) async {
     _isLoading = true;
     _errorMessage = '';
     notifyListeners();

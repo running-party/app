@@ -26,7 +26,8 @@ class SignUpModel with ChangeNotifier {
   }
 
   // 회원가입 처리
-  Future<bool> signUp(String loginId, String password, String nickname, String email) async {
+  Future<bool> signUp(
+      String loginId, String password, String nickname, String email) async {
     _setLoading(true);
 
     UserDto userDto = UserDto(

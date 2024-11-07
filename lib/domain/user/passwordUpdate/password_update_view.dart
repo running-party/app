@@ -8,9 +8,11 @@ class PasswordUpdateView extends StatelessWidget {
 
   PasswordUpdateView({required this.userId});
 
-  final TextEditingController _currentPasswordController = TextEditingController();
+  final TextEditingController _currentPasswordController =
+      TextEditingController();
   final TextEditingController _newPasswordController = TextEditingController();
-  final TextEditingController _confirmNewPasswordController = TextEditingController();
+  final TextEditingController _confirmNewPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +46,8 @@ class PasswordUpdateView extends StatelessWidget {
           else
             ElevatedButton(
               onPressed: () {
-                if (_newPasswordController.text == _confirmNewPasswordController.text) {
+                if (_newPasswordController.text ==
+                    _confirmNewPasswordController.text) {
                   passwordUpdateModel.updatePassword(
                     userId,
                     _currentPasswordController.text,

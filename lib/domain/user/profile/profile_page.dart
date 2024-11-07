@@ -14,7 +14,7 @@ class ProfilePage extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => ProfileModel()..loadProfile(userId),
       child: Scaffold(
-        appBar: AppBar(title: Text('프로필')),
+        appBar: AppBar(title: Text('내 정보')),
         body: ProfileView(userId: userId),
       ),
     );

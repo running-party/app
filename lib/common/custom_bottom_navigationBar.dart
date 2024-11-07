@@ -15,8 +15,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
     return BottomNavigationBar(
       currentIndex: selectedIndex,
       onTap: onTabSelected,
-      selectedItemColor: Colors.blue, // 선택된 아이템 색상
-      unselectedItemColor: Colors.grey, // 선택되지 않은 아이템 색상
+      selectedItemColor: Colors.blue,
+      // 선택된 아이템 색상
+      unselectedItemColor: Colors.grey,
+      // 선택되지 않은 아이템 색상
       items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.dashboard),

@@ -11,7 +11,8 @@ class _SignUpFormState extends State<SignUpView> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _loginIdController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
   final TextEditingController _nicknameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
 
@@ -26,7 +27,8 @@ class _SignUpFormState extends State<SignUpView> {
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      child: Form( // 전체 폼을 감싸는 Form 위젯 추가
+      child: Form(
+        // 전체 폼을 감싸는 Form 위젯 추가
         key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -54,7 +56,8 @@ class _SignUpFormState extends State<SignUpView> {
                     setState(() {
                       _isCheckingLoginId = true;
                     });
-                    bool isAvailable = await _checkLoginIdAvailability(_loginIdController.text);
+                    bool isAvailable = await _checkLoginIdAvailability(
+                        _loginIdController.text);
                     setState(() {
                       _isLoginIdChecked = isAvailable;
                       _isCheckingLoginId = false;
@@ -63,7 +66,8 @@ class _SignUpFormState extends State<SignUpView> {
                   },
                 ),
               ),
-              validator: (value) { // 유효성 검사 추가
+              validator: (value) {
+                // 유효성 검사 추가
                 if (value == null || value.isEmpty) {
                   return '아이디를 입력해주세요.';
                 }
@@ -116,7 +120,8 @@ class _SignUpFormState extends State<SignUpView> {
                     setState(() {
                       _isCheckingNickname = true;
                     });
-                    bool isAvailable = await _checkNicknameAvailability(_nicknameController.text);
+                    bool isAvailable = await _checkNicknameAvailability(
+                        _nicknameController.text);
                     setState(() {
                       _isNicknameChecked = isAvailable;
                       _isCheckingNickname = false;
@@ -187,19 +192,22 @@ class _SignUpFormState extends State<SignUpView> {
     );
   }
 
-  Widget _buildCheckButton({required String label, required bool isChecking, required VoidCallback onPressed}) {
+  Widget _buildCheckButton(
+      {required String label,
+      required bool isChecking,
+      required VoidCallback onPressed}) {
     return ElevatedButton(
       onPressed: isChecking ? null : onPressed,
       style: ElevatedButton.styleFrom(),
       child: isChecking
           ? SizedBox(
-        width: 16,
-        height: 16,
-        child: CircularProgressIndicator(
-          strokeWidth: 2,
-          color: Colors.white,
-        ),
-      )
+              width: 16,
+              height: 16,
+              child: CircularProgressIndicator(
+                strokeWidth: 2,
+                color: Colors.white,
+              ),
+            )
           : Text(label),
     );
   }
@@ -215,12 +223,14 @@ class _SignUpFormState extends State<SignUpView> {
   }
 
   void _showCheckResultMessage(bool isAvailable, String fieldType) {
-    String message = isAvailable ? '사용 가능한 $fieldType입니다.' : '$fieldType가 이미 존재합니다.';
+    String message =
+        isAvailable ? '사용 가능한 $fieldType입니다.' : '$fieldType가 이미 존재합니다.';
     _showSnackbar(message);
   }
 
   void _showSnackbar(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(message)));
   }
 
   @override

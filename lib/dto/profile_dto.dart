@@ -4,13 +4,22 @@ class ProfileDto {
   final String email;
   final String profilePictureUrl;
 
-  ProfileDto({required this.name, required this.email, required this.profilePictureUrl, required String username, required String userId, required String profileImageUrl});
+  ProfileDto(
+      {required this.name,
+      required this.email,
+      required this.profilePictureUrl,
+      required String username,
+      required String userId,
+      required String profileImageUrl});
 
   factory ProfileDto.fromJson(Map<String, dynamic> json) {
     return ProfileDto(
       name: json['name'],
       email: json['email'],
-      profilePictureUrl: json['profilePictureUrl'], username: '', userId: '', profileImageUrl: '',
+      profilePictureUrl: json['profilePictureUrl'],
+      username: '',
+      userId: '',
+      profileImageUrl: '',
     );
   }
 

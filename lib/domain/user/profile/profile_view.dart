@@ -18,7 +18,8 @@ class _ProfileViewState extends State<ProfileView> {
 
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _profileImageUrlController = TextEditingController();
+  final TextEditingController _profileImageUrlController =
+      TextEditingController();
 
   @override
   void didChangeDependencies() {
@@ -91,7 +92,9 @@ class _ProfileViewState extends State<ProfileView> {
     if (profileModel.isFetching) {
       return Center(child: CircularProgressIndicator());
     } else if (profileModel.fetchErrorMessage.isNotEmpty) {
-      return Center(child: Text(profileModel.fetchErrorMessage, style: TextStyle(color: Colors.red)));
+      return Center(
+          child: Text(profileModel.fetchErrorMessage,
+              style: TextStyle(color: Colors.red)));
     } else if (profileModel.profile == null) {
       return Center(child: Text('프로필 정보를 찾을 수 없습니다.'));
     } else {
@@ -142,12 +145,14 @@ class _ProfileViewState extends State<ProfileView> {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  profileModel.updateProfile(
+                  profileModel
+                      .updateProfile(
                     widget.userId,
                     _usernameController.text,
                     _emailController.text,
                     _profileImageUrlController.text,
-                  ).then((_) {
+                  )
+                      .then((_) {
                     if (profileModel.isUpdated) {
                       setState(() {
                         _isEditMode = false;
